@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        var queryURL = 'https://developers.zomato.com/api/v2.1/categories';
+        $.ajax({
+            url: queryURL,
+            method: 'GET',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Accept', 'application/json');
+                xhr.setRequestHeader('user-key', '<YOUR API KEY>');
+            },
+            success: function(data) {
+                console.log('success');
+                console.log(data);
+            }
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
